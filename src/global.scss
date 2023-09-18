@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  @media (max-width: 1000px) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
+$primary-color: #FFEB3B;
+$color-text: #D2C2C2;
+$background: #131313;
+$background-list: #202020;
+$button: rgba(255, 235, 59, 0.671);
+$button-cancel: #FF5722;
+$font-inter: 'Inter', sans-serif;
+
+body {  
+  background-color: $background;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: $font-inter;
+  font-weight: 400;
+}
+
+h1, h2, h3, strong {
+  font-weight: 600;
+} 
+
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
