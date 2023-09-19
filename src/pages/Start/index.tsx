@@ -12,7 +12,7 @@ export function Start() {
           <img src={imageApp} alt="" />
           <h3>Shopping Lists</h3>
           <p>...made easy and convenient</p>
-          <Link to="/"><button>Start using GroList</button></Link>
+          <Link to="/login"><button>Start using GroList</button></Link>
         </div>
         <div className="image-section">
           <img src={imgGrocery} alt="" />
