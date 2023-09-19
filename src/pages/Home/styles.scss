@@ -1,0 +1,40 @@
+@import '../../global.scss';
+
+.home-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 6.625rem 0 6rem;
+    color: $color-text;
+  }
+
+  p {
+    color: $color-text;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 3.75rem;
+  }
+
+  img {
+    width: 146px;
+    // height: 130px;
+    margin-bottom: 1.25rem;
+  }
+
+  button {
+    font-size: 1rem;
+    width: 225px;
+    height: 45px;
+    font-weight: 600;
+    color: #000;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 1.25rem;
+    .strong {
+      font-weight: 700;
+    }
+  }
+}
