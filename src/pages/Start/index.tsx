@@ -1,19 +1,23 @@
-import imgCart from '../../assets/images/shopping-kart.jpg'
+import { Link } from 'react-router-dom';
+import imgGrocery from '../../assets/images/grocery-photo.jpeg'
+import imageApp from '../../assets/images/shopping_app.svg'
+import './styles.scss'
 
 export function Start() {
   return (
     <main>
-      <h1>Start</h1>
-      <section>
-        <div>
-          <h1>GroList</h1>
-          <img src="" alt="" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <section className="column-container">
+        <div className="content-section">
+          <h1>Grocery List</h1>
+          <img src={imageApp} alt="" />
+          <h3>Shopping Lists</h3>
+          <p>...made easy and convenient</p>
+          <Link to="/"><button>Start using GroList</button></Link>
+        </div>
+        <div className="image-section">
+          <img src={imgGrocery} alt="" />
         </div>
       </section>
-      <section>
-        <img src={imgCart} alt="" />
-      </section>
     </main>
-  )
+  );
 }
