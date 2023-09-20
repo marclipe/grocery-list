@@ -39,7 +39,7 @@ export function Login() {
   return (
     <main className="section-container">
       <section className="form-section">
-        <form /*autoComplete='off'*/ onSubmit={handleSubmit(onSubmit)}>
+        <form autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
           <h2>Login</h2>
           <div>
             <label htmlFor="iemail">Email: </label>
