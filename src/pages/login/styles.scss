@@ -6,7 +6,69 @@
 }
 
 .form-section {
-  
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $color-text;
+  }
+
+  form {
+    max-width: 25rem;
+    margin: 0 auto;
+    padding: 4.25rem;
+    background-color: $background-form;
+    border-radius: 8px;
+  } 
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: $color-text;
+  }
+
+  input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: $font-inter;
+    font-weight: 400;
+    color: #1E1E1E;
+  }
+
+  input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  button {
+    width: 100%;
+    height: 42px;
+    border-radius: 0.5rem;
+    border: none;
+    color: #1E1E1E;
+    font-weight: 700;
+    font-size: 0.875rem;
+    font-family: $font-inter;
+    background-color: $primary-color;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $button;
+    }
+  }
 }
 
-.image-section {}
+.image-section {
+  img {
+    max-width: 100%;
+    height: 100vh; 
+  }
+}
