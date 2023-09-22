@@ -1,7 +1,42 @@
 import imgGroceryAuth from '../../assets/images/grrocey-auth.jpg'
 import './styles.scss'
+import { z } from "zod";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const formSchema = z
+  .object({
+    username: z.string().min(1, "O nome é obrigatório!").max(100),
+    email: z.string().email("Email é inválido").min(1, "O email é obrigatório"),
+    password: z
+      .string()
+      .min(1, "A senha é obrigatória")
+      .min(8, "A senha deve ter mais do que 8 caracteres"),
+    confirmPassword: z.string().min(1, "A confirmação da senha é obrigatória"),
+    terms: z.literal(true, {
+      errorMap: () => ({ message: "Você deve aceitar os termos e condições!" }),
+    }),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "As senhas não coincidem!!",
+  });
+
+  type FormSchemaType = z.infer<typeof formSchema>;
 
 export function Auth() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormSchemaType>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
+    console.log(data);
+  };
+
   return (
     <main className="container-auth">
       <section className="content-section">
@@ -33,7 +68,7 @@ export function Auth() {
               </div>
               <div>
                 <label htmlFor="iterms">
-                  I accept the <a href="#">Terms and Conditions</a>
+                  Eu aceito os <a href="#">Termos e Condições</a>
                 </label>
               </div>
             </div>

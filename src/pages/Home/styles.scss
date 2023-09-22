@@ -1,10 +1,17 @@
 @import '../../global.scss';
+$background-image: url('../../assets//images/little-empty-shopping-trolleys.jpg');
+$background-color: #000000b7;
 
 .home-container { 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient($background-color, $background-color), $background-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 
   h1 {
     margin: 6.625rem 0 6rem;
@@ -20,7 +27,6 @@
 
   img {
     width: 146px;
-    // height: 130px;
     margin-bottom: 1.25rem;
   }
 
