@@ -22,8 +22,6 @@ const formSchema = z
     message: "As senhas não coincidem!!",
   });
 
-  type FormSchemaType = z.infer<typeof formSchema>;
-
 export function Auth() {
   const {
     register,
@@ -33,6 +31,8 @@ export function Auth() {
     resolver: zodResolver(formSchema),
   });
 
+  type FormSchemaType = z.infer<typeof formSchema>;
+
   const onSubmit: SubmitHandler<FormSchemaType> = (data) => {
     console.log(data);
   };
@@ -41,18 +41,42 @@ export function Auth() {
     <main className="container-auth">
       <section className="content-section">
         <div className="container-form">
-          <form action="">
+          <form onSubmit={handleSubmit(onSubmit)} action="">
             <div>
               <label htmlFor="iusername">Seu Nome</label>
-              <input type="text" id="iusername" placeholder="name" />
+              <input
+                type="text"
+                id="iusername"
+                placeholder="name"
+                {...register("username")}
+              />
+              {errors.username && (
+                <span className="errors-input">{errors.username?.message}</span>
+              )}
             </div>
             <div>
               <label htmlFor="iemail">Seu Email</label>
-              <input type="email" id="iemail" placeholder="name@email.com" />
+              <input
+                type="email"
+                id="iemail"
+                placeholder="name@email.com"
+                {...register("email")}
+              />
+              {errors.email && (
+                <span className="errors-input">{errors.email?.message}</span>
+              )}
             </div>
             <div>
               <label htmlFor="ipassword">Senha</label>
-              <input type="password" id="ipassword" placeholder="••••••••" />
+              <input
+                type="password"
+                id="ipassword"
+                placeholder="••••••••"
+                {...register("password")}
+              />
+              {errors.password && (
+                <span className="errors-input">{errors.password?.message}</span>
+              )}
             </div>
             <div>
               <label htmlFor="iconfirm-password">Confirmar Senha</label>
@@ -60,11 +84,17 @@ export function Auth() {
                 type="password"
                 id="confirm-password"
                 placeholder="••••••••"
+                {...register("confirmPassword")}
               />
+              {errors.confirmPassword && (
+                <span className="errors-input">
+                  {errors.confirmPassword?.message}
+                </span>
+              )}
             </div>
             <div className="container-terms">
               <div>
-                <input type="checkbox" id="iterms" />
+                <input type="checkbox" id="iterms" {...register("terms")} />
               </div>
               <div>
                 <label htmlFor="iterms">
@@ -72,8 +102,13 @@ export function Auth() {
                 </label>
               </div>
             </div>
-            <div className='button-container'>
-              <button type="submit">Criar conta</button>
+            {errors.terms && <span className="errors-input">
+                {errors.terms?.message}
+            </span>}
+            <div className="button-container">
+              <button type="submit" disabled={isSubmitting}>
+                Criar conta
+              </button>
             </div>
           </form>
         </div>

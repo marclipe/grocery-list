@@ -16,7 +16,7 @@
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     background-color: $background-form;
     max-width: 600px;
     padding: 40px;
@@ -68,4 +68,11 @@
 
 .content-section {
   margin: 0 auto;
+}
+
+.errors-input {
+  color: rgba(5, 2, 2, 0.842);
+  display: block;
+  padding-bottom: 15px;
+  font-weight: 400;
 }
