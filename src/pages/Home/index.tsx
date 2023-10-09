@@ -43,8 +43,8 @@ export function Home() {
     <ItemContext.Provider value={{ items, dispatchUserEvent }}>
       <main className='home-container'>
         <h1>Your shopping Lists</h1>
-        <img src={imgCart} alt="" />
-        {/* <p>
+        {/* <img src={imgCart} alt="" />
+        <p>
           You have not added any shopping lists <br /> Tap the button below to create one
           now
         </p>

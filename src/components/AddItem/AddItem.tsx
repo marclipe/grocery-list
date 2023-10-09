@@ -9,7 +9,10 @@ export const AddItem = () => {
 
   const handleAddItem = () => {
     const item = { id: Math.random(), name, price, image }; 
-    dispatchUserEvent('ADD_ITEM', {newItem: item})
+    dispatchUserEvent({
+      type: 'ADD_ITEM', 
+      payload: {newItem: item}
+    })
   }
 
   return (
@@ -35,19 +38,34 @@ export const AddItem = () => {
           onChange={(e) => {
             setPrice(e.target.value);
           }}
-          placeholder="name"
+          placeholder="price"
         />
       </div>
       <br />
       <div>
+        <label htmlFor="imageUpload" className="custom-file-upload">
+          <span>Carregar Imagem</span>
+        </label>
         <input
-          type="text"
-          value={image}
-          id="price"
+          type="file"
+          accept="image/*"
+          id="imageUpload"
+          // value={image}
           onChange={(e) => {
-            setImage(e.target.value);
+            // setImage(e.target.value);
+            const selectedImage = e.target.files && e.target.files[0];;
+
+            if(selectedImage) {
+              const render = new FileReader()
+              render.onload = () => {
+                const imageDataURL = render.result as string
+                setImage(imageDataURL)
+              }; 
+              render.readAsDataURL(selectedImage)
+            }
           }}
-          placeholder="name"
+          placeholder="image"
+          style={{ display: "none" }}
         />
       </div>
       <br />
