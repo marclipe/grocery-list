@@ -16,7 +16,11 @@
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
+<<<<<<< HEAD
     gap: 2rem;
+=======
+    gap: 1.5rem;
+>>>>>>> pages
     background-color: $background-form;
     max-width: 600px;
     padding: 40px;
@@ -50,7 +54,15 @@
 
   .container-terms {
     display: flex;
+<<<<<<< HEAD
     gap: 1rem;
+=======
+    gap: 0.5rem;
+
+    a {
+      color: #000;
+    }
+>>>>>>> pages
   }
 
   .button-container {
@@ -64,4 +76,14 @@
 
 .content-section {
   margin: 0 auto;
+<<<<<<< HEAD
+=======
+}
+
+.errors-input {
+  color: rgba(5, 2, 2, 0.842);
+  display: block;
+  padding-bottom: 15px;
+  font-weight: 400;
+>>>>>>> pages
 }

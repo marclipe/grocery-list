@@ -19,3 +19,6 @@ Server:
 ### Business Rules
 - [] - Os clientes que não possuem conta, não poderão logar no site
 - [] - Se não tiver nenhuma lista deve ficar vazia a tela com uma imagem base
+
+
+(Using Context API in React)[https://medium.com/nerd-for-tech/using-context-api-in-react-with-functional-components-dbc653c7d485]
